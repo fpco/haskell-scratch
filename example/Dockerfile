@@ -1,6 +1,6 @@
 #-*- mode:conf; -*-
 
-FROM haskell-scratch
+FROM haskell-scratch:integer-gmp
 
 ADD hello /usr/bin/hello
 CMD hello
