@@ -70,4 +70,12 @@ docker-integer-simple: | root/bin/sh root/lib/x86_64-linux-gnu/libc.so.6 root/li
 clean:
 	@rm -rf root
 
-.PHONY: default docker-integer-gmp docker-integer-simple clean
+push:
+	@docker tag -f haskell-scratch:integer-gmp fpco/haskell-scratch:integer-gmp
+	@docker push fpco/haskell-scratch:integer-gmp
+	@docker tag -f haskell-scratch:integer-simple fpco/haskell-scratch:integer-simple
+	@docker push fpco/haskell-scratch:integer-simple
+	@docker tag -f haskell-scratch:integer-simple fpco/haskell-scratch:latest
+	@docker push fpco/haskell-scratch:latest
+
+.PHONY: default docker-integer-gmp docker-integer-simple clean push
