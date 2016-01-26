@@ -38,6 +38,8 @@ root/lib64/ld-linux-x86-64.so.2: | root/lib64
 	@cp -L /lib64/ld-linux-x86-64.so.2 root/lib64/
 root/etc/protocols:  | root/etc
 	@cp -L /etc/protocols root/etc/
+root/etc/nsswitch.conf:  | root/etc
+	@cp -L /etc/nsswitch.conf root/etc/
 root/etc/services:  | root/etc
 	@cp -L /etc/services root/etc/
 root/usr: | root
